@@ -14,9 +14,15 @@ void set_zombies(int n, char fred[n+2][n+2]){
 		fred[row][col] = 'Z';
 	}
 }
-void print_zombies(int n, char fred[n][n]){
+void print_zombies(int n, char fred[n+2][n+2]){
+	for (int i = 0; i < n+2; i++){
+		for (int j = 0; j < n+2; j++){
+			printf("%c", fred[i][j]);
+		}
+		printf("\n");
+	}
 }
-void block_zombies(int n, char fred[n][n]){
+void block_zombies(int n, char fred[n+2][n+2]){
 }
 
 int main(){
@@ -38,11 +44,6 @@ int main(){
 	}
 	
 	set_zombies(n, fred);
-	for (int i = 0; i < n+2; i++){
-		for (int j = 0; j < n+2; j++){
-			printf("%c", fred[i][j]);
-		}
-		printf("\n");
-	}
+	print_zombies(n, fred);
 
 }
